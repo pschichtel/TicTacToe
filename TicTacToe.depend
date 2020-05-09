@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1137866422 source:f:\coding\c++\tictactoe\ic.cpp
+	"ic.hpp"
+
+1137866243 f:\coding\c++\tictactoe\ic.hpp
+	<string>
+	<tchar.h>
+	<windows.h>
+
+1277065951 source:f:\coding\c++\tictactoe\main.cpp
+	<iostream>
+	"TTT.hpp"
+
+1277108268 f:\coding\c++\tictactoe\ttt.hpp
+	<string>
+	<iostream>
+	<fstream>
+	<algorithm>
+	<sstream>
+	"ic.hpp"
+
+1277108822 source:f:\coding\c++\tictactoe\ttt.cpp
+	"TTT.hpp"
+

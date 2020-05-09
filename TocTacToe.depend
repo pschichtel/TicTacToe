@@ -1,0 +1,30 @@
+# depslib dependency file v1.0
+1277065951 source:f:\coding\c++\matrix\toctactoe\main.cpp
+	<iostream>
+	"TTT.hpp"
+
+1277108268 f:\coding\c++\matrix\toctactoe\ttt.hpp
+	<string>
+	<iostream>
+	<fstream>
+	<algorithm>
+	<sstream>
+	"ic.hpp"
+
+1276980250 source:f:\coding\c++\matrix\matrix.cpp
+	<cstdlib>
+	<cstdio>
+	<iostream>
+	<string>
+
+1277108248 source:f:\coding\c++\matrix\toctactoe\ttt.cpp
+	"TTT.hpp"
+
+1137866422 source:f:\coding\c++\matrix\toctactoe\ic.cpp
+	"ic.hpp"
+
+1137866243 f:\coding\c++\matrix\toctactoe\ic.hpp
+	<string>
+	<tchar.h>
+	<windows.h>
+
