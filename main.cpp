@@ -1,7 +1,6 @@
 #include <iostream>
 #include "TTT.hpp"
 
-using namespace ic;
 using namespace std;
 
 string readLine(int);
@@ -55,9 +54,7 @@ int* getSize(void)
 
     do
     {
-        con.setColor(FG_GREEN);
         cout << "Die Breite: ";
-        con.setColor(FG_WHITE);
         width = readNum();
         if (width < 3)
         {
@@ -68,9 +65,7 @@ int* getSize(void)
 
     do
     {
-        con.setColor(FG_GREEN);
         cout << "Die Hoehe: ";
-        con.setColor(FG_WHITE);
         height = readNum();
         if (height < 3)
         {
@@ -81,9 +76,7 @@ int* getSize(void)
 
     do
     {
-        con.setColor(FG_GREEN);
         cout << "Die Siegeslaenge: ";
-        con.setColor(FG_WHITE);
         winLen = readNum();
         if (winLen < 2)
         {
@@ -112,9 +105,7 @@ int* getCoord(string delim)
         unsigned int delimPos;
         do
         {
-            con.setColor(FG_GREEN);
             cout << "Geben Sie die Koordinate ein [X" << delim << "Y]: ";
-            con.setColor(FG_WHITE);
             input = readLine();
             delimPos = input.find(delim);
             cond = delimPos == string::npos;
@@ -143,50 +134,22 @@ int* getCoord(string delim)
 
 inline void printError(string msg)
 {
-    con.setColor(FG_RED);
     cout << endl << msg << endl;
-    con.setColor(FG_WHITE);
 }
 
 inline void printCurrentPlayer(TTT* game)
 {
-    Color color;
     int player = game->get_player();
-    if (player == 1)
-    {
-        color = FG_GREEN;
-    }
-    else
-    {
-        color = FG_RED;
-    }
-    con.setColor(FG_YELLOW);
     cout << "Spieler ";
-    con.setColor(color);
     cout << player;
-    con.setColor(FG_YELLOW);
     cout << " ist an der Reihe!" << std::endl;
-    con.setColor(FG_WHITE);
 }
 
 inline void printWinner(int player)
 {
-    Color color;
-    if (player == 1)
-    {
-        color = FG_GREEN;
-    }
-    else
-    {
-        color = FG_RED;
-    }
-    con.setColor(FG_GREEN);
     cout << endl << "Spieler ";
-    con.setColor(color);
     cout << player;
-    con.setColor(FG_GREEN);
     cout << " hat das Spiel gewonnen!" << std::endl;
-    con.setColor(FG_WHITE);
 }
 
 string trim(string str)
@@ -263,37 +226,21 @@ string int2string(int num)
 
 int main(int argc, char** argv)
 {
-    con.setTitle("TicTacToe by Phillip Schichtel");
-
     int* data = getSize();
-    int winWidth = data[0] * 2;
-    int winHeight = data[1] + 10;
-    if (winWidth < 50)
-    {
-        winWidth = 50;
-    }
 
     TTT* game = new TTT(data[0], data[1], data[2], 1);
 
     delete data;
 
-    con.clear();
-    con.setCurPos(0, 4);
-    con.setColor(FG_YELLOW);
     cout << "Wer als erstes eine " << game->get_winLen() << "er Reihe erreicht gewinnt!" << endl;
-    con.setColor(FG_GREEN);
     cout << endl << "<ENTER> zum Fortfahren" << endl;
     cin.get();
     fflush(stdin);
-
-    con.setWndSize(winWidth, winHeight);
 
     int winner = 0;
 
     while (true)
     {
-        con.clear();
-        con.setCurPos(0, 0);
 
         game->printField();
 

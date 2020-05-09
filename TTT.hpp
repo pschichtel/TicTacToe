@@ -3,7 +3,6 @@
 #include <fstream>
 #include <algorithm>
 #include <sstream>
-#include "ic.hpp"
 
 #ifndef __TTT_INCLUDED
 #define __TTT_INCLUDED

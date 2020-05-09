@@ -1,5 +1,7 @@
 #include "TTT.hpp"
 
+using namespace std;
+
 TTT::TTT(void)
 {
     this->init_members(0, 0, 0, 1);
@@ -76,29 +78,15 @@ void TTT::makeMatrix(int width, int height)
 void TTT::printField(void)
 {
     std::cout << std::endl << std::endl;
-    ic::con.setBgColor(ic::BG_WHITE);
     for (int y = height - 1; y >= 0; y--)
     {
         for (int x = 0; x < width; x++)
         {
             int state = this->matrix[x][y];
-            switch (state)
-            {
-                case 0:
-                    ic::con.setColor(ic::FG_WHITE);
-                    break;
-                case 1:
-                    ic::con.setColor(ic::FG_GREEN);
-                    break;
-                case 2:
-                    ic::con.setColor(ic::FG_RED);
-            }
             std::cout << state << " ";
         }
         std::cout << std::endl;
     }
-    ic::con.setBgColor(ic::BG_BLACK);
-    ic::con.setColor(ic::BG_WHITE);
     std::cout << std::endl << std::endl;
 }
 
